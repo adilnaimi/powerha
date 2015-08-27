@@ -1,5 +1,14 @@
 #!/bin/ksh
+# Purpose: Provides an alternative to SNMP monitoring for PowerHA/HACMP (clinfo and clstat).
+# Designed to be run within the cluster, not remotely. See next point!
+# Can be customised to run remotely and monitor multiple clusters!
 # Version: 9.06
+# Updates for PowerHA version 7.1
+# Authors: 1. Alex Abderrazag IBM UK
+# # 2. Bill Miller IBM US
+# Additions since 8.14.
+# qha can be freely distributed. If you have any questions or would like to see any enhancements/updates, please email abderra@uk.ibm.com
+
 # VARS
 export PATH=$PATH:/usr/es/sbin/cluster/utilities
 VERSION=`lslpp -L |grep -i cluster.es.server.rte |awk '{print $2}'| sed 's/\.//g'`
